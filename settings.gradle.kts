@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "OTP System"
+rootProject.name = "otp-system"
 include(":app")
  
