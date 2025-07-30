@@ -43,4 +43,5 @@ dependencies {
 
     implementation(project(":design"))
     implementation(project(":navigation:domain"))
+    implementation(project(":auth:api"))
 }

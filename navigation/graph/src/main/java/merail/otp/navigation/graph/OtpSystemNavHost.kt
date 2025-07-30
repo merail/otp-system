@@ -74,7 +74,11 @@ fun OtpSystemNavHost(
         }
 
         composable<NavigationRoute.Home> {
-            HomeContainer()
+            HomeContainer(
+                onExit = {
+                    navController.navigate(NavigationRoute.EmailInput)
+                }
+            )
         }
 
         dialog<NavigationRoute.Error>(

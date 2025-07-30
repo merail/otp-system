@@ -74,7 +74,7 @@ internal class AuthRepository @Inject constructor(
         }
     }
 
-    override suspend fun authorizeWithEmail(
+    override suspend fun authorize(
         email: String,
         password: String,
     ) {
@@ -94,5 +94,9 @@ internal class AuthRepository @Inject constructor(
                 }
             }
         }
+    }
+
+    override fun signOut() {
+        firebaseAuth.signOut()
     }
 }

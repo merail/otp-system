@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_title">You\'re home</string>
+    <string name="home_exit_button">Exit</string>
+</resources>

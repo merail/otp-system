@@ -68,7 +68,7 @@ internal class PasswordEnterViewModel @Inject constructor(
             }
             suspendableRunCatching {
                 Log.d(TAG, "Password auth. Start")
-                authRepository.authorizeWithEmail(
+                authRepository.authorize(
                     email = email,
                     password = _passwordValueState.value.password,
                 )
