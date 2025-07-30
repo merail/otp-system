@@ -1,7 +1,7 @@
 package merail.otp.navigation.domain
 
 import kotlinx.serialization.Serializable
-import merail.otp.navigation.domain.error.ErrorType
+import merail.otp.core.exceptions.ErrorType
 
 sealed class NavigationRoute {
     @Serializable

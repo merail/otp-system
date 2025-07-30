@@ -1,4 +1,4 @@
-package merail.otp.navigation.domain.error
+package merail.otp.error
 
 import android.view.Gravity
 import android.view.WindowManager
@@ -22,14 +22,34 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.DialogWindowProvider
-import merail.otp.navigation.domain.R
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
+import merail.otp.core.exceptions.ErrorType
+import merail.otp.core.exceptions.toType
 import merail.otp.design.OtpSystemTheme
 import merail.otp.design.cardColors
+import merail.otp.navigation.domain.NavigationRoute
+import merail.otp.navigation.domain.R
+
+fun NavController.navigateToError(error: Throwable?) = navigate(
+    route = NavigationRoute.Error(error.toType()),
+) {
+    launchSingleTop = true
+}
 
 @Composable
-fun ErrorDialog(
-    errorType: ErrorType,
+fun ErrorContainer(
     onDismiss: () -> Unit,
+) {
+    ErrorDialog(
+        onDismiss = onDismiss,
+    )
+}
+
+@Composable
+internal fun ErrorDialog(
+    onDismiss: () -> Unit,
+    viewModel: ErrorViewModel = hiltViewModel<ErrorViewModel>(),
 ) {
     (LocalView.current.parent as? DialogWindowProvider)?.run {
         window.setGravity(Gravity.TOP)
@@ -74,7 +94,7 @@ fun ErrorDialog(
                         style = OtpSystemTheme.typography.titleMedium,
                     )
                     Text(
-                        text = stringResource(errorType.message),
+                        text = stringResource(viewModel.errorType.message),
                         style = OtpSystemTheme.typography.bodyMedium,
                     )
                 }

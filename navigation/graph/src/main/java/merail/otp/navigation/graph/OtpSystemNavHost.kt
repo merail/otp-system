@@ -8,11 +8,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.dialog
 import androidx.navigation.compose.rememberNavController
 import merail.otp.email.EmailInputContainer
+import merail.otp.error.ErrorContainer
+import merail.otp.error.navigateToError
 import merail.otp.home.HomeContainer
 import merail.otp.navigation.domain.NavigationRoute
-import merail.otp.navigation.domain.error.ErrorDialog
-import merail.otp.navigation.domain.errorType
-import merail.otp.navigation.domain.navigateToError
 import merail.otp.otp.OtpInputContainer
 import merail.otp.password.passwordCreation.PasswordCreationContainer
 import merail.otp.password.passwordEnter.PasswordEnterContainer
@@ -84,8 +83,7 @@ fun OtpSystemNavHost(
                 usePlatformDefaultWidth = false,
             ),
         ) {
-            ErrorDialog(
-                errorType = it.errorType,
+            ErrorContainer(
                 onDismiss = navController::popBackStack,
             )
         }
