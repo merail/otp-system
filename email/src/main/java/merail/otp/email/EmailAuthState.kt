@@ -1,4 +1,4 @@
-package merail.otp.emailinput
+package merail.otp.email
 
 internal sealed class EmailAuthState {
 

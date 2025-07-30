@@ -1,4 +1,4 @@
-package merail.otp.emailinput
+package merail.otp.email
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -24,7 +24,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import merail.otp.design.OtpTheme
+import merail.otp.design.OtpSystemTheme
 import merail.otp.design.components.BlockingSurface
 import merail.otp.design.components.ContinueButton
 import merail.otp.design.styles.TextFieldStyle
@@ -82,7 +82,7 @@ internal fun EmailInputScreen(
             ) {
                 Text(
                     text = stringResource(R.string.email_input_title),
-                    style = OtpTheme.typography.displaySmall,
+                    style = OtpSystemTheme.typography.displaySmall,
                     textAlign = TextAlign.Companion.Center,
                     modifier = Modifier
                         .fillMaxWidth()
@@ -95,7 +95,7 @@ internal fun EmailInputScreen(
 
                 Text(
                     text = stringResource(R.string.email_input_description),
-                    style = OtpTheme.typography.bodyLarge,
+                    style = OtpSystemTheme.typography.bodyLarge,
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(
@@ -161,8 +161,8 @@ private fun EmailField(
         if (emailValueState.isValid.not()) {
             Text(
                 text = stringResource(R.string.email_input_validation_error),
-                style = OtpTheme.typography.bodyMedium,
-                color = OtpTheme.colors.textNegative,
+                style = OtpSystemTheme.typography.bodyMedium,
+                color = OtpSystemTheme.colors.textNegative,
                 modifier = Modifier
                     .padding(
                         start = 12.dp,

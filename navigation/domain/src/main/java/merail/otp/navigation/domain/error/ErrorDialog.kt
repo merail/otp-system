@@ -23,7 +23,7 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.DialogWindowProvider
 import merail.otp.navigation.domain.R
-import merail.otp.design.OtpTheme
+import merail.otp.design.OtpSystemTheme
 import merail.otp.design.cardColors
 
 @Composable
@@ -52,8 +52,8 @@ fun ErrorDialog(
         backgroundContent = {},
     ) {
         Card(
-            colors = OtpTheme.colors.cardColors.copy(
-                containerColor = OtpTheme.colors.elementNegative,
+            colors = OtpSystemTheme.colors.cardColors.copy(
+                containerColor = OtpSystemTheme.colors.elementNegative,
             ),
             modifier = Modifier
                 .fillMaxWidth()
@@ -71,11 +71,11 @@ fun ErrorDialog(
                 ) {
                     Text(
                         text = stringResource(R.string.error_title),
-                        style = OtpTheme.typography.titleMedium,
+                        style = OtpSystemTheme.typography.titleMedium,
                     )
                     Text(
                         text = stringResource(errorType.message),
-                        style = OtpTheme.typography.bodyMedium,
+                        style = OtpSystemTheme.typography.bodyMedium,
                     )
                 }
 

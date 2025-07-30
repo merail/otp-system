@@ -5,7 +5,7 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import merail.otp.design.ColorConstants
-import merail.otp.design.OtpTheme
+import merail.otp.design.OtpSystemTheme
 
 @Immutable
 sealed class ButtonStyle {
@@ -17,9 +17,9 @@ sealed class ButtonStyle {
         @Composable
         override fun colors() = ButtonDefaults.buttonColors(
             containerColor = ColorConstants.thunder,
-            contentColor = OtpTheme.colors.textPrimary,
+            contentColor = OtpSystemTheme.colors.textPrimary,
             disabledContainerColor = ColorConstants.thunder,
-            disabledContentColor = OtpTheme.colors.textPrimary,
+            disabledContentColor = OtpSystemTheme.colors.textPrimary,
         )
     }
 }

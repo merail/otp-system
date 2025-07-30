@@ -22,7 +22,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import merail.otp.design.OtpTheme
+import merail.otp.design.OtpSystemTheme
 import merail.otp.design.components.BlockingSurface
 import merail.otp.design.components.ContinueButton
 import merail.otp.password.R
@@ -86,14 +86,14 @@ internal fun PasswordEnterScreen(
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = "Back to EmailInput from PasswordEnter Icon",
-                            tint = OtpTheme.colors.graphicPrimary,
+                            tint = OtpSystemTheme.colors.graphicPrimary,
                             modifier = Modifier
                                 .size(36.dp),
                         )
                     }
                     Text(
                         text = stringResource(R.string.password_enter_title),
-                        style = OtpTheme.typography.displaySmall,
+                        style = OtpSystemTheme.typography.displaySmall,
                         textAlign = TextAlign.Center,
                         modifier = Modifier
                             .weight(1f),
@@ -102,7 +102,7 @@ internal fun PasswordEnterScreen(
 
                 Text(
                     text = stringResource(R.string.password_enter_description),
-                    style = OtpTheme.typography.bodyLarge,
+                    style = OtpSystemTheme.typography.bodyLarge,
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(

@@ -13,7 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import merail.otp.design.OtpTheme
+import merail.otp.design.OtpSystemTheme
 import merail.otp.design.styles.ButtonStyle
 
 @Composable
@@ -45,7 +45,7 @@ fun ContinueButton(
             Text(
                 text = text,
                 textAlign = TextAlign.Center,
-                style = OtpTheme.typography.titleMedium,
+                style = OtpSystemTheme.typography.titleMedium,
             )
         }
     }

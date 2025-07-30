@@ -7,22 +7,28 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.dialog
 import androidx.navigation.compose.rememberNavController
-import merail.otp.emailinput.EmailInputContainer
+import merail.otp.email.EmailInputContainer
+import merail.otp.home.HomeContainer
 import merail.otp.navigation.domain.NavigationRoute
 import merail.otp.navigation.domain.error.ErrorDialog
 import merail.otp.navigation.domain.errorType
 import merail.otp.navigation.domain.navigateToError
-import merail.otp.otpinput.OtpInputContainer
+import merail.otp.otp.OtpInputContainer
 import merail.otp.password.passwordCreation.PasswordCreationContainer
 import merail.otp.password.passwordEnter.PasswordEnterContainer
 
 @Composable
 fun OtpSystemNavHost(
+    isUserAuthorized: Boolean,
     navController: NavHostController = rememberNavController(),
 ) {
     NavHost(
         navController = navController,
-        startDestination = NavigationRoute.EmailInput,
+        startDestination = if (isUserAuthorized) {
+            NavigationRoute.Home
+        } else {
+            NavigationRoute.EmailInput
+        },
     ) {
         composable<NavigationRoute.EmailInput> {
             EmailInputContainer(
@@ -50,7 +56,9 @@ fun OtpSystemNavHost(
         composable<NavigationRoute.PasswordCreation> {
             PasswordCreationContainer(
                 onError = navController::navigateToError,
-                navigateToHome = {},
+                navigateToHome = {
+                    navController.navigate(NavigationRoute.Home)
+                },
             )
         }
 
@@ -60,8 +68,14 @@ fun OtpSystemNavHost(
                     navController.popBackStack()
                 },
                 onError = navController::navigateToError,
-                navigateToHome = {},
+                navigateToHome = {
+                    navController.navigate(NavigationRoute.Home)
+                },
             )
+        }
+
+        composable<NavigationRoute.Home> {
+            HomeContainer()
         }
 
         dialog<NavigationRoute.Error>(

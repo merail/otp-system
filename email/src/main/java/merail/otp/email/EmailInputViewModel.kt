@@ -1,4 +1,4 @@
-package merail.otp.emailinput
+package merail.otp.email
 
 import android.util.Log
 import androidx.lifecycle.ViewModel

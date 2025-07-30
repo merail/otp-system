@@ -10,7 +10,7 @@ plugins {
 }
 
 android {
-    namespace = "merail.otp.emailinput"
+    namespace = "merail.otp.email"
     compileSdk = 36
 
     defaultConfig {

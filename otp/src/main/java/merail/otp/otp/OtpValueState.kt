@@ -1,4 +1,4 @@
-package merail.otp.otpinput
+package merail.otp.otp
 
 import kotlin.text.isDigit
 import kotlin.text.isEmpty

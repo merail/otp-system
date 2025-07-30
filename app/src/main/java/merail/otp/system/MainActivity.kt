@@ -6,15 +6,20 @@ import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import dagger.hilt.android.AndroidEntryPoint
-import merail.otp.design.OtpTheme
+import merail.otp.design.OtpSystemTheme
 import merail.otp.navigation.graph.OtpSystemNavHost
+import kotlin.getValue
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    private val viewModel: MainViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge(
             statusBarStyle = SystemBarStyle.light(Color.TRANSPARENT, Color.TRANSPARENT),
@@ -24,12 +29,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            OtpTheme {
+            OtpSystemTheme {
                 Surface(
                     modifier = Modifier
                         .fillMaxSize(),
                 ) {
-                    OtpSystemNavHost()
+                    OtpSystemNavHost(
+                        isUserAuthorized = viewModel.isUserAuthorized,
+                    )
                 }
             }
         }

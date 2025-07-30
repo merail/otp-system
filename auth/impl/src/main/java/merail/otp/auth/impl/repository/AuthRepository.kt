@@ -17,6 +17,8 @@ internal class AuthRepository @Inject constructor(
     private val emailSender: EmailSender,
 ) : IAuthRepository {
 
+    override fun isUserAuthorized() = firebaseAuth.currentUser?.email.isNullOrBlank().not()
+
     override suspend fun isUserExist(
         email: String,
     ) = withContext(Dispatchers.IO) {

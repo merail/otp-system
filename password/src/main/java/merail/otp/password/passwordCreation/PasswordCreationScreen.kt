@@ -32,7 +32,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import merail.otp.design.OtpTheme
+import merail.otp.design.OtpSystemTheme
 import merail.otp.design.components.BlockingSurface
 import merail.otp.design.components.ContinueButton
 import merail.otp.design.styles.TextFieldStyle
@@ -79,7 +79,7 @@ internal fun PasswordCreationScreen(
             ) {
                 Text(
                     text = stringResource(R.string.password_creation_title),
-                    style = OtpTheme.typography.displaySmall,
+                    style = OtpSystemTheme.typography.displaySmall,
                     textAlign = TextAlign.Center,
                     modifier = Modifier
                         .fillMaxWidth()
@@ -92,7 +92,7 @@ internal fun PasswordCreationScreen(
 
                 Text(
                     text = stringResource(R.string.password_creation_description),
-                    style = OtpTheme.typography.bodyLarge,
+                    style = OtpSystemTheme.typography.bodyLarge,
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(
@@ -201,8 +201,8 @@ internal fun PasswordField(
         if (passwordValueState.isValid.not()) {
             Text(
                 text = errorText,
-                style = OtpTheme.typography.bodyMedium,
-                color = OtpTheme.colors.textNegative,
+                style = OtpSystemTheme.typography.bodyMedium,
+                color = OtpSystemTheme.colors.textNegative,
                 modifier = Modifier
                     .padding(
                         start = 12.dp,

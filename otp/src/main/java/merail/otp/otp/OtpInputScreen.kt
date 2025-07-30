@@ -1,4 +1,4 @@
-package merail.otp.otpinput
+package merail.otp.otp
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.TweenSpec
@@ -45,7 +45,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import kotlinx.coroutines.delay
 import merail.otp.core.extensions.toCountdownTime
-import merail.otp.design.OtpTheme
+import merail.otp.design.OtpSystemTheme
 
 @Composable
 fun OtpInputContainer(
@@ -86,14 +86,14 @@ internal fun OtpInputScreen(
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                         contentDescription = "Back to EmailInput from OtpInput Icon",
-                        tint = OtpTheme.colors.graphicPrimary,
+                        tint = OtpSystemTheme.colors.graphicPrimary,
                         modifier = Modifier
                             .size(36.dp),
                     )
                 }
                 Text(
                     text = stringResource(R.string.otp_input_title),
-                    style = OtpTheme.typography.displaySmall,
+                    style = OtpSystemTheme.typography.displaySmall,
                     textAlign = TextAlign.Companion.Center,
                     modifier = Modifier
                         .weight(1f),
@@ -102,7 +102,7 @@ internal fun OtpInputScreen(
 
             Text(
                 text = stringResource(R.string.otp_input_description),
-                style = OtpTheme.typography.bodyLarge,
+                style = OtpSystemTheme.typography.bodyLarge,
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(
@@ -178,8 +178,8 @@ private fun OtpField(
                         else -> R.string.otp_input_validation_error
                     },
                 ),
-                style = OtpTheme.typography.bodyMedium,
-                color = OtpTheme.colors.textNegative,
+                style = OtpSystemTheme.typography.bodyMedium,
+                color = OtpSystemTheme.colors.textNegative,
                 modifier = Modifier
                     .padding(
                         start = 12.dp,
@@ -195,7 +195,7 @@ private fun OtpField(
                     R.string.otp_input_email_hint,
                     viewModel.email,
                 ),
-                style = OtpTheme.typography.bodyMedium,
+                style = OtpSystemTheme.typography.bodyMedium,
                 modifier = Modifier
                     .padding(
                         start = 12.dp,
@@ -216,7 +216,7 @@ private fun OtpField(
             val isCountdownTextVisible by viewModel.isCountdownTextVisible.collectAsState()
             Text(
                 text = stringResource(R.string.otp_input_resend_countdown_hint_text_part),
-                style = OtpTheme.typography.bodyMedium,
+                style = OtpSystemTheme.typography.bodyMedium,
                 textDecoration = if (isCountdownTextVisible) {
                     TextDecoration.Companion.None
                 } else {
@@ -246,7 +246,7 @@ private fun OtpField(
                         R.string.otp_input_resend_countdown_hint_seconds_part,
                         otpResendRemindTime.toCountdownTime(),
                     ),
-                    style = OtpTheme.typography.bodyMedium,
+                    style = OtpSystemTheme.typography.bodyMedium,
                     modifier = Modifier
                         .padding(
                             start = 4.dp,
@@ -302,9 +302,9 @@ private fun OtpCell(
             .border(
                 width = 1.dp,
                 color = if (isError) {
-                    OtpTheme.colors.graphicNegativePrimary
+                    OtpSystemTheme.colors.graphicNegativePrimary
                 } else {
-                    OtpTheme.colors.graphicPrimary
+                    OtpSystemTheme.colors.graphicPrimary
                 },
                 shape = RoundedCornerShape(8.dp),
             )
@@ -326,7 +326,7 @@ private fun OtpCell(
             ) {
                 VerticalDivider(
                     thickness = 2.5.dp,
-                    color = OtpTheme.colors.graphicPrimary,
+                    color = OtpSystemTheme.colors.graphicPrimary,
                     modifier = Modifier
                         .padding(
                             vertical = 16.dp,
@@ -336,12 +336,12 @@ private fun OtpCell(
         } else {
             Text(
                 text = char,
-                style = OtpTheme.typography.displayMedium,
+                style = OtpSystemTheme.typography.displayMedium,
                 textAlign = TextAlign.Companion.Center,
                 color = if (isError) {
-                    OtpTheme.colors.textNegative
+                    OtpSystemTheme.colors.textNegative
                 } else {
-                    OtpTheme.colors.textPrimary
+                    OtpSystemTheme.colors.textPrimary
                 }
             )
         }

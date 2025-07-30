@@ -1,4 +1,4 @@
-package merail.otp.otpinput
+package merail.otp.otp
 
 internal sealed class OtpResendState {
 

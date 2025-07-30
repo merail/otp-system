@@ -23,6 +23,9 @@ sealed class NavigationRoute {
     ) : NavigationRoute()
 
     @Serializable
+    data object Home : NavigationRoute()
+
+    @Serializable
     data class Error(
         val errorType: ErrorType,
     ) : NavigationRoute() {

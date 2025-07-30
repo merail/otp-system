@@ -10,7 +10,7 @@ plugins {
 }
 
 android {
-    namespace = "merail.otp.otpinput"
+    namespace = "merail.otp.home"
     compileSdk = 36
 
     defaultConfig {
@@ -41,8 +41,6 @@ dependencies {
     ksp(libs.hilt.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
 
-    implementation(project(":core"))
     implementation(project(":design"))
     implementation(project(":navigation:domain"))
-    implementation(project(":auth:api"))
 }

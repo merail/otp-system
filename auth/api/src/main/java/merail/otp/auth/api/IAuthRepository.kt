@@ -2,6 +2,8 @@ package merail.otp.auth.api
 
 interface IAuthRepository {
 
+    fun isUserAuthorized(): Boolean
+
     suspend fun isUserExist(
         email: String,
     ): Boolean

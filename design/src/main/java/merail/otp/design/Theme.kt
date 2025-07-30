@@ -7,7 +7,7 @@ import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.remember
 
 @Composable
-fun OtpTheme(content: @Composable () -> Unit) {
+fun OtpSystemTheme(content: @Composable () -> Unit) {
     val colors = remember {
         Colors()
     }
@@ -24,7 +24,7 @@ fun OtpTheme(content: @Composable () -> Unit) {
     }
 }
 
-object OtpTheme {
+object OtpSystemTheme {
     val colors: Colors
         @Composable
         @ReadOnlyComposable
