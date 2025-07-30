@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="email_title">Confirm your email address</string>
+    <string name="email_body"><![CDATA[<b>Otp System</b> welcomes you!<br/><br/>Please confirm your email address. Your confirmation code\u00A0is:<br/><br/><big><b>%s</b></big><br/><br/>Enter it\u00A0in\u00A0the app. If\u00A0you did not request this code, simply ignore this email.]]></string>
+</resources>

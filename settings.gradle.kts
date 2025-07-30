@@ -21,4 +21,14 @@ dependencyResolutionManagement {
 
 rootProject.name = "otp-system"
 include(":app")
- 
+include(":design")
+include(":core")
+include(":navigation")
+include(":navigation:domain")
+include(":navigation:graph")
+include(":emailInput")
+include(":auth")
+include(":auth:api")
+include(":auth:impl")
+include(":otpInput")
+include(":password")

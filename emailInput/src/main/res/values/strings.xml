@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="email_input_title">Hello</string>
+    <string name="email_input_description">Enter your email address to sign in or sign up</string>
+    <string name="email_input_label">Enter your email</string>
+    <string name="email_input_validation_error">Doesn’t look like an\u00A0email address</string>
+    <string name="email_input_continue_button">Continue</string>
+</resources>

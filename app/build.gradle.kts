@@ -1,11 +1,13 @@
+import org.gradle.kotlin.dsl.android
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-import java.util.Properties
 
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.jetbrains.kotlin.serialization)
+    alias(libs.plugins.hilt.gradle)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.google.services)
 }
 
 android {
@@ -31,36 +33,12 @@ android {
 
     buildFeatures {
         compose = true
-        buildConfig = true
     }
 
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
             pickFirsts += "/META-INF/{NOTICE.md,LICENSE.md}"
-        }
-    }
-
-    val properties = Properties()
-    properties.load(project.rootProject.file("local.properties").inputStream())
-
-    buildTypes {
-        debug {
-            buildConfigField(
-                type = "String",
-                name = "HOST_EMAIL",
-                value = properties.getProperty("hostEmail"),
-            )
-            buildConfigField(
-                type = "String",
-                name = "HOST_PASSWORD",
-                value = properties.getProperty("hostPassword"),
-            )
-            buildConfigField(
-                type = "String",
-                name = "ADRESSEE_EMAIL",
-                value = properties.getProperty("adresseeEmail"),
-            )
         }
     }
 }
@@ -82,9 +60,14 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    implementation(libs.android.mail)
-    implementation(libs.android.activation)
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 
-    implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.navigation.compose)
+
+    implementation(project(":design"))
+    implementation(project(":navigation:graph"))
+    implementation(project(":navigation:domain"))
+    implementation(project(":auth:api"))
+    implementation(project(":auth:impl"))
 }

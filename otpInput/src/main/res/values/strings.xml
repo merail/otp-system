@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="otp_input_title">Email code</string>
+    <string name="otp_input_description">Confirm your email with the code from the email</string>
+    <string name="otp_input_expired_error">The code has expired</string>
+    <string name="otp_input_validation_error">Invalid code</string>
+    <string name="otp_input_block_error">We’ve temporarily blocked code entry</string>
+    <string name="otp_input_email_hint">We’ve sent the code to\u00A0your email %s</string>
+    <string name="otp_input_resend_countdown_hint_text_part">Resend code</string>
+    <string name="otp_input_resend_countdown_hint_seconds_part">in\u00A0%s</string>
+</resources>
