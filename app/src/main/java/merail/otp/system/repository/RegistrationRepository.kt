@@ -2,7 +2,6 @@ package merail.otp.system.repository
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import merail.otp.system.BuildConfig
 import javax.mail.Authenticator
 import javax.mail.Message
 import javax.mail.PasswordAuthentication
@@ -12,9 +11,7 @@ import javax.mail.internet.InternetAddress
 import javax.mail.internet.MimeMessage
 import kotlin.random.Random
 
-object RegistrationRepository {
-
-    private const val MESSAGE_MIME_TYPE = "text/html; charset=utf-8"
+internal object RegistrationRepository {
 
     private val properties = System.getProperties()
 
@@ -41,8 +38,10 @@ object RegistrationRepository {
             object : Authenticator() {
                 override fun getPasswordAuthentication(): PasswordAuthentication {
                     return PasswordAuthentication(
-                        BuildConfig.HOST_EMAIL,
-                        BuildConfig.HOST_PASSWORD,
+                        // YOUR EMAIL HERE
+                        "rail1mesherov@gmail.com",
+                        // YOUR PASSWORD HERE
+                        "zrwt osju llxe nmvi",
                     )
                 }
             },
@@ -56,7 +55,7 @@ object RegistrationRepository {
         mimeMessage.addRecipient(Message.RecipientType.TO, InternetAddress(email))
         mimeMessage.subject = "Confirm your email address"
         code = generateCode()
-        mimeMessage.setContent("Please confirm your email address. Verification code: $code", MESSAGE_MIME_TYPE)
+        mimeMessage.setText("Please confirm your email address. Verification code: $code")
         Transport.send(mimeMessage)
     }
 

@@ -9,11 +9,9 @@ import merail.otp.system.repository.RegistrationRepository
 
 internal class EmailInputViewModel : ViewModel() {
 
-    var emailState = MutableStateFlow(EmailState(""))
-        private set
+    val emailState = MutableStateFlow(EmailState(""))
 
-    var sendOtpState = MutableStateFlow<SendOtpState>(SendOtpState.None)
-        private set
+    val sendOtpState = MutableStateFlow<SendOtpState>(SendOtpState.None)
 
     private val emailRegex = Regex(
         pattern = "^[A-Z0-9._%!+\\-]+@[A-Z0-9.\\-]+\\.[A-Z]{2,}\$",

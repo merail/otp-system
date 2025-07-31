@@ -15,7 +15,7 @@ import merail.otp.system.otpInput.OtpInputScreen
 import merail.otp.system.successDialog.SuccessDialog
 
 @Composable
-fun OtpSystemNavHost(
+internal fun OtpSystemNavHost(
     navController: NavHostController = rememberNavController(),
 ) {
     NavHost(
@@ -39,7 +39,7 @@ fun OtpSystemNavHost(
 
         composable<NavigationRoute.Otp> {
             OtpInputScreen(
-                navigateToPassword = {
+                navigateToSuccess = {
                     navController.navigate(NavigationRoute.Success)
                 },
             )

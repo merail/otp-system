@@ -105,7 +105,7 @@ private fun EmailField(
             leadingIcon = {
                 Icon(
                     imageVector = Icons.Default.Person,
-                    contentDescription = null,
+                    contentDescription = "Email User Icon",
                 )
             },
             keyboardOptions = KeyboardOptions(

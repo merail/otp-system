@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.DialogWindowProvider
 
 @Composable
-fun SuccessDialog(
+internal fun SuccessDialog(
     onDismiss: () -> Unit,
 ) {
     (LocalView.current.parent as? DialogWindowProvider)?.run {

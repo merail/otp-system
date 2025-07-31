@@ -6,8 +6,7 @@ import merail.otp.system.repository.RegistrationRepository
 
 internal class OtpInputViewModel: ViewModel() {
 
-    var otpValueState = MutableStateFlow(OtpValueState())
-        private set
+    val otpValueState = MutableStateFlow(OtpValueState())
 
     fun updateOtp(
         value: String,

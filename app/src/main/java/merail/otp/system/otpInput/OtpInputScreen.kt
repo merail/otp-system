@@ -39,7 +39,7 @@ import merail.otp.system.AppViewModelProvider
 
 @Composable
 internal fun OtpInputScreen(
-    navigateToPassword: () -> Unit,
+    navigateToSuccess: () -> Unit,
     viewModel: OtpInputViewModel = viewModel(
         factory = AppViewModelProvider.Factory,
     ),
@@ -57,7 +57,7 @@ internal fun OtpInputScreen(
                 viewModel.updateOtp(it)
                 if (it.length == 4) {
                     if (viewModel.verifyOtp()) {
-                        navigateToPassword()
+                        navigateToSuccess()
                     }
                 }
             },

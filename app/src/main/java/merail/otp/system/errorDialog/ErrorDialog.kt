@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.DialogWindowProvider
 
 @Composable
-fun ErrorDialog(
+internal fun ErrorDialog(
     errorText: String,
     onDismiss: () -> Unit,
 ) {
