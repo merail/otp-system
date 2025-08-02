@@ -1,6 +1,6 @@
 # Detailed description
 
-Article on Medium: https://medium.com/@merail/incoming-call-handler-0c57e8ae7188
+Article on Medium: https://medium.com/@merail/simple-android-otp-system-bac036757235
 
 # Short description
 
