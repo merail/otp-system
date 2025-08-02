@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="password_creation_title">Password creation</string>
-    <string name="password_creation_description">The password must be\u00A0at\u00A0least 8\u00A0characters long and include at\u00A0least one digit, one special character, one uppercase letter, and one lowercase letter</string>
+    <string name="password_creation_description">The password must be\u00A0at\u00A0least 8\u00A0characters long and include at\u00A0least one digit, one special character, one uppercase letter and one lowercase letter</string>
     <string name="password_creation_label">Enter your password</string>
     <string name="password_creation_validation_error">The password does not meet the requirements</string>
     <string name="password_creation_repeated_label">Re-enter your password</string>
