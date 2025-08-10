@@ -194,7 +194,7 @@ private fun OtpCell(
                     MaterialTheme.colorScheme.error
                 } else {
                     MaterialTheme.colorScheme.primary
-                }
+                },
             )
         }
     }
